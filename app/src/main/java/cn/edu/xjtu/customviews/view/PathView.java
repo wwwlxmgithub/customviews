@@ -11,8 +11,6 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import java.util.Arrays;
-
 /**
  * 绘制PathView
  * Created by Mg on 2017/8/26.
@@ -23,6 +21,10 @@ public class PathView extends View {
      * 宽和高
      */
     private int width, height;
+    /**
+     * 圆点半径
+     */
+    private int radius = 15;
     /**
      * 绘制网格的画笔
      */
@@ -64,7 +66,7 @@ public class PathView extends View {
     private int spaceCount  = 4;
 
     // 坐标轴最大值
-    private float maxValue = 400;
+    private float maxValue = 100;
     // 覆盖区域颜色
     private int OVERRIDE_COLOR = 0x7f7D7DFC;
     // 各坐标点的颜色
@@ -77,6 +79,7 @@ public class PathView extends View {
      * 绘制路径
      */
     private Path path;
+    private Path titlePath;
 
     /**
      * 各个数据所处的坐标点
@@ -101,6 +104,7 @@ public class PathView extends View {
      */
     public void setTitles(String[] titles) {
         this.titles = titles;
+        invalidate();
     }
 
     /**
@@ -109,6 +113,7 @@ public class PathView extends View {
      */
     public void setData(float[] data) {
         this.data = data;
+        invalidate();
     }
 
     /**
@@ -117,6 +122,7 @@ public class PathView extends View {
      */
     public void setMaxValue (float maxValue){
         this.maxValue = maxValue;
+         invalidate();
     }
 
     /**
@@ -125,6 +131,7 @@ public class PathView extends View {
      */
     public void setGridColor(int gridColor) {
         netPaint.setColor(gridColor);
+        invalidate();
     }
 
     /**
@@ -133,6 +140,7 @@ public class PathView extends View {
      */
     public void setOverrideColor(int overrideColor) {
         overridePaint.setColor(overrideColor);
+        invalidate();
     }
 
     /**
@@ -141,6 +149,7 @@ public class PathView extends View {
      */
     public void setPointColor(int pointColor) {
         dotPaint.setColor(pointColor);
+        invalidate();
     }
 
     /**
@@ -149,6 +158,7 @@ public class PathView extends View {
      */
     public void setPathEffect(PathEffect effect){
         this.effect = effect;
+         invalidate();
     }
 
     /**
@@ -157,10 +167,12 @@ public class PathView extends View {
      */
     public void setDimensionCount(int dimensionCount) {
         this.dimenssionCount = dimensionCount;
+         invalidate();
     }
 
     public void setSpaceCount(int spaceCount) {
         this.spaceCount = spaceCount;
+        invalidate();
     }
 
     float[] param = new float[2]; {
@@ -200,10 +212,11 @@ public class PathView extends View {
         points = new float[dimenssionCount][2];
 
         for(int i = 0; i < dimenssionCount; i++) {
-            data[i] = (float) Math.random();
+            data[i] = data[i] / maxValue;
         }
 
         path = new Path();
+        titlePath = new Path();
     }
 
     @Override
@@ -216,14 +229,17 @@ public class PathView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Path titlePath = new Path();
         Paint.FontMetrics fontMetrics = titlePaint.getFontMetrics();
-        float height = fontMetrics.descent - fontMetrics.ascent;
+        float titleHeight = fontMetrics.descent - fontMetrics.ascent;
         // 移动到画布中心
         canvas.translate(width / 2, height / 2);
 
+        float R = width < height ? width : height;
+        R /= 4;
+        radius = (int) (R / 25);
+
         // 计算要绘制的多边形之间的间距
-        int spacing = (int) (maxValue / spaceCount);
+        int spacing = (int) (R / spaceCount);
         for (int i = 1; i <= spaceCount; i++){
             // 第i个多边形的半径
             int r = i * spacing;
@@ -246,8 +262,8 @@ public class PathView extends View {
                     titlePath.reset();
                     titlePath.moveTo(x, y);
 
-                    int deltaX = (int) ((r + height) * Math.cos(ang));
-                    int deltaY = (int) ((r + height) * Math.sin(ang));
+                    int deltaX = (int) ((r + titleHeight) * Math.cos(ang));
+                    int deltaY = (int) ((r + titleHeight) * Math.sin(ang));
                     titlePath.lineTo(deltaX , y);
                     // 绘制每个维度的标题
                     // canvas.drawTextOnPath(titles[j], titlePath, 10, 10, titlePaint);
@@ -279,8 +295,6 @@ public class PathView extends View {
      * 绘制各个数据圆点
      */
     private void drawPoints(Canvas canvas) {
-        int radius = 15;
-        System.out.println("points : " + Arrays.deepToString(points));
 
         for(int i = 0; i < dimenssionCount; i++) {
             canvas.drawCircle(points[i][0], points[i][1], radius, dotPaint);

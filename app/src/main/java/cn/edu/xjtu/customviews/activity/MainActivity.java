@@ -24,20 +24,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        Button pieViewBtn = (Button) findViewById(R.id.pieViewButton);
-        pieViewBtn.setOnClickListener(this);
+        findViewById(R.id.pieViewButton).setOnClickListener(this);
 
-        Button checkViewBtn = (Button) findViewById(R.id.CheckViewBtn);
-        checkViewBtn.setOnClickListener(this);
+        findViewById(R.id.CheckViewBtn).setOnClickListener(this);
 
-        Button drawTextBtn = (Button) findViewById(R.id.drawTextBtn);
-        drawTextBtn.setOnClickListener(this);
+        findViewById(R.id.drawTextBtn).setOnClickListener(this);
 
-        Button loadingBtn = (Button) findViewById(R.id.loadingBtn);
-        loadingBtn.setOnClickListener(this);
+        findViewById(R.id.loadingBtn).setOnClickListener(this);
 
-        Button pathViewBtn = (Button) findViewById(R.id.pathViewBtn);
-        pathViewBtn.setOnClickListener(this);
+        findViewById(R.id.pathViewBtn).setOnClickListener(this);
+
+        findViewById(R.id.BezierBtn).setOnClickListener(this);
+
+        findViewById(R.id.turningArrow).setOnClickListener(this);
+
+        findViewById(R.id.searchViewBtn).setOnClickListener(this);
     }
 
     @Override
@@ -57,6 +58,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.pathViewBtn:
                 Utils.startActivity(this, PathViewActivity.class);
+                break;
+            case R.id.BezierBtn:
+                Utils.startActivity(this, BezierCurveActivity.class);
+                break;
+            case R.id.turningArrow:
+                Utils.startActivity(this, PathMeasureActivity.class);
+                break;
+            case R.id.searchViewBtn:
+                Utils.startActivity(this, SearchViewActivity.class);
                 break;
         }
     }

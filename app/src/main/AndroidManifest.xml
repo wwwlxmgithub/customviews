@@ -22,7 +22,10 @@
             android:hardwareAccelerated="false" />
         <activity android:name=".activity.DrawTextActivity" />
         <activity android:name=".activity.GorgeousLoadingViewActivity" />
-        <activity android:name=".activity.PathViewActivity"></activity>
+        <activity android:name=".activity.PathViewActivity" />
+        <activity android:name=".activity.BezierCurveActivity" />
+        <activity android:name=".activity.PathMeasureActivity" />
+        <activity android:name=".activity.SearchViewActivity"></activity>
     </application>
 
 </manifest>
