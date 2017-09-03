@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.turningArrow).setOnClickListener(this);
 
         findViewById(R.id.searchViewBtn).setOnClickListener(this);
+
+        findViewById(R.id.zoomImageViewBtn).setOnClickListener(this);
     }
 
     @Override
@@ -67,6 +69,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.searchViewBtn:
                 Utils.startActivity(this, SearchViewActivity.class);
+                break;
+            case R.id.zoomImageViewBtn:
+                Utils.startActivity(this, ZoomImageViewActivity.class);
                 break;
         }
     }
