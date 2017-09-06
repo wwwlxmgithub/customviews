@@ -41,6 +41,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.searchViewBtn).setOnClickListener(this);
 
         findViewById(R.id.zoomImageViewBtn).setOnClickListener(this);
+        findViewById(R.id.regionTestBtn).setOnClickListener(this);
+
+        findViewById(R.id.dragViewBtn).setOnClickListener(this);
+
+        findViewById(R.id.gestureDetectorBtn).setOnClickListener(this);
+
+        findViewById(R.id.taijiBtn).setOnClickListener(this);
+
+        findViewById(R.id.smileViewBtn).setOnClickListener(this);
     }
 
     @Override
@@ -72,6 +81,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.zoomImageViewBtn:
                 Utils.startActivity(this, ZoomImageViewActivity.class);
+                break;
+            case R.id.regionTestBtn:
+                Utils.startActivity(this, RegionTestActivity.class);
+                break;
+            case R.id.dragViewBtn:
+                Utils.startActivity(this, DragViewActivity.class);
+                break;
+            case R.id.gestureDetectorBtn:
+                Utils.startActivity(this, GestureDetectorActivity.class);
+                break;
+            case R.id.taijiBtn:
+                Utils.startActivity(this, TaiJiActivity.class);
+                break;
+            case R.id.smileViewBtn:
+                Utils.startActivity(this, SmileViewActivity.class);
                 break;
         }
     }

@@ -26,7 +26,12 @@
         <activity android:name=".activity.BezierCurveActivity" />
         <activity android:name=".activity.PathMeasureActivity" />
         <activity android:name=".activity.SearchViewActivity" />
-        <activity android:name=".activity.ZoomImageViewActivity"></activity>
+        <activity android:name=".activity.ZoomImageViewActivity" />
+        <activity android:name=".activity.RegionTestActivity" />
+        <activity android:name=".activity.DragViewActivity" />
+        <activity android:name=".activity.GestureDetectorActivity" />
+        <activity android:name=".activity.TaiJiActivity" />
+        <activity android:name=".activity.SmileViewActivity"></activity>
     </application>
 
 </manifest>

@@ -15,9 +15,12 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.view.MenuItem;
 import android.view.View;
+import android.webkit.DownloadListener;
 
 import cn.edu.xjtu.customviews.R;
+import cn.edu.xjtu.customviews.listener.OnSearchListener;
 
 public class SearchViewActivity extends AppCompatActivity {
 
@@ -26,6 +29,16 @@ public class SearchViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_view);
         setTitle("SearchView");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home){
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 
@@ -94,6 +107,7 @@ class SearchView extends View{
         currentState = State.STARTING;
         startingAnimator.start();
     }
+
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -249,3 +263,4 @@ class SearchView extends View{
     }
 
 }
+

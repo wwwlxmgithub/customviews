@@ -1,133 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="cn.edu.xjtu.customviews.activity.MainActivity">
 
-    <Button
-        android:id="@+id/pieViewButton"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="饼状图"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/CheckViewBtn"
-        android:layout_marginStart="8dp" />
-
-    <Button
-        android:id="@id/CheckViewBtn"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="勾选动画"
-        app:layout_constraintLeft_toRightOf="@+id/pieViewButton"
-        app:layout_constraintEnd_toStartOf="@+id/drawTextBtn"
-        android:layout_marginStart="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="8dp" />
-
-    <Button
-        android:id="@id/drawTextBtn"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:text="绘制文本"
-        app:layout_constraintLeft_toRightOf="@+id/CheckViewBtn"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
-
-    <LinearLayout
-        android:id="@+id/ll"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="60dp">
-        <Button
-            android:id="@+id/loadingBtn"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="加载动效"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_weight="1"
-            app:layout_constraintLeft_toLeftOf="parent" />
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/pieViewButton"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="饼状图"
+                    android:layout_weight="1"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="8dp" />
 
-        <Button
-            android:id="@+id/pathViewBtn"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Path绘制"
-            android:layout_weight="1"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp" />
+                <Button
+                    android:id="@+id/CheckViewBtn"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="勾选动画"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp" />
 
-        <Button
-            android:id="@+id/BezierBtn"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            android:text="贝塞尔曲线"
-            app:layout_constraintLeft_toRightOf="@+id/pathViewBtn"
-            app:layout_constraintRight_toRightOf="parent" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/turningArrow"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="旋转箭头"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_weight="1" />
+                <Button
+                    android:id="@+id/drawTextBtn"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="绘制文本"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp" />
+            </LinearLayout>
 
-        <Button
-            android:id="@+id/searchViewBtn"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="搜索View"
-            android:layout_weight="1"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp" />
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/loadingBtn"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="加载动效"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    app:layout_constraintLeft_toLeftOf="parent" />
 
-        <Button
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:id="@+id/zoomImageViewBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            android:text="缩放图片"
-            app:layout_constraintLeft_toRightOf="@+id/pathViewBtn"
-            app:layout_constraintRight_toRightOf="parent" />
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+                <Button
+                    android:id="@+id/pathViewBtn"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Path绘制"
+                    android:layout_weight="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp" />
+
+                <Button
+                    android:id="@+id/BezierBtn"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="贝塞尔曲线"
+                    app:layout_constraintLeft_toRightOf="@+id/pathViewBtn"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/turningArrow"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="旋转箭头"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/searchViewBtn"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="搜索View"
+                    android:layout_weight="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp" />
+
+                <Button
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:id="@+id/zoomImageViewBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="缩放图片" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/regionTestBtn"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Region初探"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/dragViewBtn"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DragView"
+                    android:layout_weight="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp" />
+
+                <Button
+                    android:id="@+id/gestureDetectorBtn"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="手势检测" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/taijiBtn"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="太极八卦图"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/smileViewBtn"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/smile_view"
+                    android:layout_weight="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp" />
+
+                <Button
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text=" "
+                    app:layout_constraintLeft_toRightOf="@+id/pathViewBtn"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
