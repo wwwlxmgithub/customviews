@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.smileViewBtn).setOnClickListener(this);
 
         findViewById(R.id.listViewStyleBtn).setOnClickListener(this);
+
+        findViewById(R.id.recyclerViewBtn).setOnClickListener(this);
     }
 
     @Override
@@ -101,6 +103,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.listViewStyleBtn:
                 Utils.startActivity(this, ListViewStyleActivity.class);
+                break;
+            case R.id.recyclerViewBtn:
+                Utils.startActivity(this, RecyclerViewActivity.class);
                 break;
         }
     }

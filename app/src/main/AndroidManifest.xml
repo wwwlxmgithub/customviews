@@ -33,7 +33,8 @@
         <activity android:name=".activity.TaiJiActivity" />
         <activity android:name=".activity.SmileViewActivity" />
         <activity android:name=".activity.ListViewStyleActivity" />
-        <activity android:name=".activity.ListViewPreviewActivity"></activity>
+        <activity android:name=".activity.ListViewPreviewActivity" />
+        <activity android:name=".activity.RecyclerViewActivity"></activity>
     </application>
 
 </manifest>
