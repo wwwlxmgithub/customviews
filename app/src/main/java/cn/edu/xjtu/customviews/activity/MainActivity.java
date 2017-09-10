@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.taijiBtn).setOnClickListener(this);
 
         findViewById(R.id.smileViewBtn).setOnClickListener(this);
+
+        findViewById(R.id.listViewStyleBtn).setOnClickListener(this);
     }
 
     @Override
@@ -96,6 +98,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.smileViewBtn:
                 Utils.startActivity(this, SmileViewActivity.class);
+                break;
+            case R.id.listViewStyleBtn:
+                Utils.startActivity(this, ListViewStyleActivity.class);
                 break;
         }
     }

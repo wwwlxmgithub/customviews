@@ -15,6 +15,13 @@ public class Utils {
         fromActivity.startActivity(intent);
     }
 
+    public static void startActivityWithIntData(Context fromActivity, Class toActivity, String key, int layoutId){
+        Intent intent = new Intent();
+        intent.setClass(fromActivity, toActivity);
+        intent.putExtra(key, layoutId);
+        fromActivity.startActivity(intent);
+    }
+
     public static void showToast(Context context, String message){
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }

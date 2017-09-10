@@ -185,6 +185,7 @@
                     android:layout_marginLeft="8dp" />
 
                 <Button
+                    android:id="@+id/listViewStyleBtn"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -192,7 +193,7 @@
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_weight="1"
-                    android:text=" "
+                    android:text="列表样式"
                     app:layout_constraintLeft_toRightOf="@+id/pathViewBtn"
                     app:layout_constraintRight_toRightOf="parent" />
             </LinearLayout>

@@ -31,7 +31,9 @@
         <activity android:name=".activity.DragViewActivity" />
         <activity android:name=".activity.GestureDetectorActivity" />
         <activity android:name=".activity.TaiJiActivity" />
-        <activity android:name=".activity.SmileViewActivity"></activity>
+        <activity android:name=".activity.SmileViewActivity" />
+        <activity android:name=".activity.ListViewStyleActivity" />
+        <activity android:name=".activity.ListViewPreviewActivity"></activity>
     </application>
 
 </manifest>
