@@ -34,7 +34,14 @@
         <activity android:name=".activity.SmileViewActivity" />
         <activity android:name=".activity.ListViewStyleActivity" />
         <activity android:name=".activity.ListViewPreviewActivity" />
-        <activity android:name=".activity.RecyclerViewActivity"></activity>
+        <activity android:name=".activity.RecyclerViewActivity" />
+        <activity android:name=".activity.CubicInputActivity" />
+        <activity android:name=".activity.PropertyAnimation2Activity" />
+        <activity
+            android:name=".activity.DrawerActivity"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.ButtonsActivity"></activity>
     </application>
 
 </manifest>

@@ -8,4 +8,10 @@
     <string name="increase_the_progress_btn_text">增加进度:</string>
 
     <string name="smile_view">笑脸😊</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

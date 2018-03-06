@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.searchViewBtn).setOnClickListener(this);
 
         findViewById(R.id.zoomImageViewBtn).setOnClickListener(this);
+
         findViewById(R.id.regionTestBtn).setOnClickListener(this);
 
         findViewById(R.id.dragViewBtn).setOnClickListener(this);
@@ -54,6 +55,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.listViewStyleBtn).setOnClickListener(this);
 
         findViewById(R.id.recyclerViewBtn).setOnClickListener(this);
+
+        findViewById(R.id.cubicInputBtn).setOnClickListener(this);
+
+        findViewById(R.id.propertyAnimBtn).setOnClickListener(this);
+
+        findViewById(R.id.drawerActBtn).setOnClickListener(this);
+
+        findViewById(R.id.buttonsBtn).setOnClickListener(this);
     }
 
     @Override
@@ -107,6 +116,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.recyclerViewBtn:
                 Utils.startActivity(this, RecyclerViewActivity.class);
                 break;
+            case R.id.cubicInputBtn:
+                Utils.startActivity(this, CubicInputActivity.class);
+                break;
+            case R.id.propertyAnimBtn:
+                Utils.startActivity(this, PropertyAnimation2Activity.class);
+                break;
+            case R.id.drawerActBtn:
+                Utils.startActivity(this, DrawerActivity.class);
+            case R.id.buttonsBtn:
+                Utils.startActivity(this, ButtonsActivity.class);
         }
     }
 }
